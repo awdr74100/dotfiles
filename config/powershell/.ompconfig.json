@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "template": " {{ if .Root }}\uf740 {{ else }}\uf007 {{ end }}{{ .UserName }} ",
+          "foreground": "#F05454"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "template": "<#EEEEEE>in</> {{ .Path }} ",
+          "properties": {
+            "folder_icon": " \uf6d7 ",
+            "folder_separator_icon": "/",
+            "style": "agnoster"
+          },
+          "foreground": "#52d1e7"
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "template": "<#EEEEEE>on</> {{ .UpstreamIcon }}{{ .HEAD }}{{ if .Staging.Changed }} \uf633 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf62f {{ .Working.String }}{{ end }} ",
+          "properties": {
+            "branch_icon": "\uf126 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FD7014{{ else }}#01d35f{{ end }}"
+          ]
+        },
+        {
+          "type": "exit",
+          "style": "plain",
+          "template": "<#EEEEEE>::</> \uf5e3 {{ .Code }} ",
+          "foreground": "#ff82d9"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "template": "\uf054",
+          "foreground": "#EEEEEE"
+        }
+      ]
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}

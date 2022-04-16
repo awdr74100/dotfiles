@@ -1,0 +1,12 @@
+[core]
+	autocrlf = input
+[credential]
+	helper = manager-core
+[init]
+	defaultBranch = master
+[user]
+	name = Yi-Ru Lan
+	email = a78945612385238@gmail.com
+[alias]
+	s = status
+	l = log --all --graph --abbrev-commit --pretty=format:'%S(yellow)%h%C(reset) -%C(auto)%d%C(reset) %s %C(magenta)(%ar) %C(bold blue)<%an>'
